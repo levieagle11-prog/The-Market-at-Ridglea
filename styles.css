@@ -643,3 +643,82 @@ footer {
   box-shadow: 0 4px 18px rgba(107,186,184,.22);
   transform: translateY(-2px);
 }
+
+/* ════════════════════════════════════════
+   SHOPS GRID OVERHAUL — uniform card sizing
+════════════════════════════════════════ */
+.shops-cloud {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 1rem !important;
+  max-width: 1000px !important;
+  margin: 2.4rem auto 2.8rem !important;
+  justify-items: stretch !important;
+}
+
+/* All cards same height */
+.shop-chip,
+.shop-logo-card,
+.shop-photo-card {
+  width: 100% !important;
+  height: 110px !important;
+  border-radius: var(--radius) !important;
+}
+
+/* Plain text chips — centered */
+.shop-chip {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 1rem !important;
+  font-size: .78rem !important;
+}
+
+/* Logo cards — centered with contained image */
+.shop-logo-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1rem !important;
+}
+.shop-logo-card img {
+  height: auto !important;
+  max-height: 70px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+}
+
+/* Photo cards — full bleed with label */
+.shop-photo-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  padding: 0 !important;
+}
+.shop-photo-card img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+}
+.shop-photo-label {
+  font-size: .65rem !important;
+  padding: .4rem .6rem !important;
+}
+
+/* Responsive grid */
+@media (max-width: 900px) {
+  .shops-cloud {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+@media (max-width: 560px) {
+  .shops-cloud {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
