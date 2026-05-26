@@ -303,6 +303,18 @@ window.addEventListener('load', function() {
       </div>
     </div>
   </div>
+
+  <!-- Newsletter strip inside footer -->
+  <div class="footer-nl">
+    <div class="footer-nl-text">
+      <div class="label">Stay Connected</div>
+      <div class="headline">Get the latest arrivals &amp; <em>events</em></div>
+    </div>
+    <form class="footer-nl-form" onsubmit="this.innerHTML='<div style=padding:1rem 1.5rem;color:var(--teal-d);font-weight:700;background:#fff;width:100%;text-align:center>You&rsquo;re on the list!</div>';event.preventDefault()">
+      <input type="email" placeholder="your@email.com" required aria-label="Email for newsletter">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
   <div class="footer-bottom">
     <span>&copy; 2026 The Market at Ridglea. All rights reserved.</span>
     <span>Made with love for Fort Worth, TX</span>
