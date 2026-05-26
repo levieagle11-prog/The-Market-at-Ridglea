@@ -733,3 +733,79 @@ footer {
 .mo.tall  { grid-row: span 2; grid-column: span 1; }
 .mo.wide  { grid-column: span 2; }
 .mo       { height: auto !important; }
+
+/* ════════════════════════════════════════
+   EMOJI REPLACEMENTS — elegant symbols
+════════════════════════════════════════ */
+
+/* Category icons — replace emoji with teal decorative line */
+.cat-icon {
+  font-size: 1rem !important;
+  color: var(--teal) !important;
+  letter-spacing: .2em;
+  margin-bottom: .6rem !important;
+  display: block;
+}
+
+/* Perk icons — elegant dash replaced with teal rule */
+.perk-ico {
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--teal);
+  margin: 0 auto .9rem;
+  font-size: 0 !important;
+  border-radius: 2px;
+}
+
+/* Location detail icons — style the arrow markers */
+.loc-ico {
+  color: var(--teal);
+  font-size: .75rem !important;
+  font-weight: 700;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* Badge without emoji */
+.hero-badge {
+  gap: .7rem;
+}
+
+/* Ticker dots — replace ✦ with · via CSS */
+.ticker-item::after {
+  content: '·' !important;
+  font-size: 1.2rem;
+  opacity: .5;
+  line-height: 1;
+}
+
+/* Feature tags — clean dots */
+.tags .tag::first-letter {
+  font-size: 0;
+}
+
+/* Footer contact rows — arrow styling */
+.footer-contact div {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.footer-contact div::before {
+  content: '›';
+  color: var(--teal-l);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Nav gift card pill — no emoji */
+.nav-pill {
+  letter-spacing: .12em;
+}
+
+/* Price chip clean */
+.price-chip::before {
+  content: '›';
+  color: var(--teal-d);
+  font-size: 1rem;
+}
