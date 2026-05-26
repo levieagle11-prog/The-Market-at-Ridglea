@@ -866,3 +866,29 @@ footer {
 @media (max-width: 768px) {
   .page-hero-simple { padding-top: calc(68px + 2rem) !important; }
 }
+
+/* ════════════════════════════════════════
+   MAP Z-INDEX FIX — navbar stays on top
+════════════════════════════════════════ */
+#navbar {
+  z-index: 9999 !important;
+}
+#market-map {
+  position: relative;
+  z-index: 1;
+}
+.leaflet-pane,
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 1 !important;
+}
+.leaflet-control {
+  z-index: 2 !important;
+}
+
+/* Footer logo fix — don't invert a light logo */
+.footer-logo {
+  filter: none !important;
+  height: 36px !important;
+  background: transparent;
+}
