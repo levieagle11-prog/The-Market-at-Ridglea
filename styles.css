@@ -809,3 +809,25 @@ footer {
   color: var(--teal-d);
   font-size: 1rem;
 }
+
+
+/* Page hero (non-home pages) */
+.page-hero-simple {
+  padding: 8rem 5rem 4rem;
+  text-align: center;
+  background: var(--warm);
+  padding-top: calc(72px + 4rem);
+}
+.page-hero-simple .u-eyebrow { margin-bottom: .75rem; }
+.page-hero-simple .u-h2 { margin-bottom: .75rem; }
+.page-hero-simple .u-body { max-width: 520px; margin: 0 auto; }
+
+/* Map section */
+.map-section { background: var(--cream); }
+
+/* Active nav link */
+.nav-links a.active { color: var(--teal); }
+
+@media (max-width: 768px) {
+  .page-hero-simple { padding: calc(72px + 2rem) 1.5rem 2rem; }
+}
