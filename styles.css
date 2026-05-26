@@ -780,10 +780,7 @@ footer {
   line-height: 1;
 }
 
-/* Feature tags — clean dots */
-.tags .tag::first-letter {
-  font-size: 0;
-}
+/* Feature tags */
 
 /* Footer contact rows — arrow styling */
 .footer-contact div {
@@ -1111,4 +1108,38 @@ footer::after {
   .footer-nl { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
   .footer-nl-form { flex: 1; width: 100%; }
   .footer-bottom { padding: 1.4rem 1.5rem !important; flex-direction: column; gap: .5rem; text-align: center; }
+}
+
+/* ════════════════════════════════════════
+   CONTACT PAGE — readable text fix
+════════════════════════════════════════ */
+.contact-info-block div {
+  font-size: .95rem !important;
+  color: var(--mid) !important;
+  line-height: 2.2 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: .6rem !important;
+}
+.contact-info-block div::before {
+  content: '›' !important;
+  color: var(--teal) !important;
+  font-size: 1.1rem !important;
+  flex-shrink: 0 !important;
+}
+.contact-info-block a {
+  color: var(--mid) !important;
+  transition: color .2s !important;
+}
+.contact-info-block a:hover {
+  color: var(--teal) !important;
+}
+.contact-section-label {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 1rem;
+  display: block;
 }
