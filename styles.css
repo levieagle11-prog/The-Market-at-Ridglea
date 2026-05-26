@@ -1143,3 +1143,222 @@ footer::after {
   margin-bottom: 1rem;
   display: block;
 }
+
+/* ════════════════════════════════════════
+   MOBILE OVERHAUL — full responsive pass
+   Breakpoints: 768px, 480px
+════════════════════════════════════════ */
+
+/* ── GLOBAL ── */
+@media (max-width: 768px) {
+  html { font-size: 15px; }
+  body { overflow-x: hidden; }
+
+  /* NAVBAR */
+  #navbar {
+    padding: 0 1.2rem !important;
+    height: 60px !important;
+  }
+  #navbar.scrolled { height: 52px !important; }
+  .nav-logo { height: 34px !important; }
+  .nav-logo img { height: 34px !important; max-width: 130px !important; }
+  .nav-links {
+    display: none !important;
+    position: fixed !important;
+    top: 60px !important; left: 0 !important; right: 0 !important;
+    background: rgba(255,252,250,.98) !important;
+    backdrop-filter: blur(20px) !important;
+    flex-direction: column !important;
+    padding: 1rem 1.5rem 2rem !important;
+    gap: 0 !important;
+    box-shadow: 0 12px 40px rgba(44,36,32,.12) !important;
+    z-index: 9998 !important;
+    border-bottom: 2px solid rgba(107,186,184,.2);
+  }
+  .nav-links.open { display: flex !important; }
+  .nav-links li { border-bottom: 1px solid rgba(200,173,148,.12) !important; }
+  .nav-links a {
+    display: block !important;
+    padding: .9rem 0 !important;
+    font-size: .85rem !important;
+    letter-spacing: .1em !important;
+  }
+  .nav-links li:last-child { border-bottom: none !important; }
+  .nav-pill {
+    display: inline-block !important;
+    margin-top: .75rem !important;
+    padding: .7rem 1.4rem !important;
+    text-align: center !important;
+    border-radius: 50px !important;
+  }
+  #nav-toggle { display: flex !important; }
+
+  /* HERO */
+  .hero {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    padding-top: 60px !important;
+  }
+  .hero-left {
+    padding: 2.4rem 1.4rem 2rem !important;
+    order: 2;
+  }
+  .hero-left::before, .hero-left::after { display: none; }
+  .hero-right {
+    height: 56vw !important;
+    min-height: 240px !important;
+    order: 1;
+  }
+  .hero-right-overlay {
+    background: linear-gradient(to bottom, transparent 40%, var(--warm) 100%),
+                linear-gradient(to top, rgba(44,36,32,.3) 0%, transparent 60%) !important;
+  }
+  .hero-badge {
+    bottom: 1rem !important;
+    right: 1rem !important;
+    left: auto !important;
+    padding: .7rem 1rem !important;
+  }
+  .u-h1 { font-size: clamp(2.2rem, 8vw, 3.4rem) !important; }
+  .hero-script-wrap .u-script { font-size: clamp(1.8rem, 6vw, 2.8rem) !important; }
+  .hero-body { font-size: .92rem !important; margin-bottom: 1.6rem !important; }
+  .hero-ctas { gap: .75rem !important; flex-direction: column !important; }
+  .hero-ctas .btn { width: 100% !important; justify-content: center !important; }
+  .hero-proof { gap: 1.6rem !important; margin-top: 1.8rem !important; padding-top: 1.4rem !important; }
+  .proof-item .num { font-size: 1.8rem !important; }
+  .proof-item .lbl { font-size: .6rem !important; }
+
+  /* TICKER */
+  .ticker { padding: .65rem 0 !important; }
+  .ticker-item { font-size: .62rem !important; padding: 0 1.4rem !important; gap: 1.4rem !important; }
+
+  /* SECTIONS */
+  .section { padding: 3.5rem 1.4rem !important; }
+
+  /* CATEGORIES */
+  .cats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+  }
+  .cat-card { padding: 1.8rem 1.2rem !important; }
+  .cat-icon { font-size: .8rem !important; margin-bottom: .5rem !important; }
+  .cat-name { font-size: 1.05rem !important; }
+  .cat-desc { font-size: .78rem !important; }
+
+  /* GALLERY STRIP */
+  .gallery-strip {
+    grid-template-columns: 1fr 1fr !important;
+    height: auto !important;
+    gap: 2px !important;
+  }
+  .gp { height: 44vw !important; }
+
+  /* LOCATIONS */
+  .loc-grid { grid-template-columns: 1fr !important; gap: 1.2rem !important; }
+  .loc-card-head { padding: 2rem 1.4rem 1.4rem !important; }
+  .loc-card-body { padding: 1.4rem 1.4rem 1.8rem !important; }
+  .loc-city { font-size: 1.5rem !important; }
+  .loc-bignum { font-size: 3.5rem !important; }
+
+  /* FEATURE SPLIT */
+  .feature { grid-template-columns: 1fr !important; min-height: auto !important; }
+  .feature-img { height: 60vw !important; min-height: 220px !important; }
+  .feature-img-grad { background: linear-gradient(to bottom, transparent 50%, rgba(44,36,32,.5)) !important; }
+  .feature-body { padding: 2.4rem 1.4rem !important; }
+  .feature-h { font-size: clamp(1.6rem, 5.5vw, 2.4rem) !important; }
+  .feature-script { font-size: 1.7rem !important; }
+  .feature-para { font-size: .88rem !important; }
+  .tags { gap: .5rem !important; }
+  .tag { font-size: .68rem !important; padding: .38rem .85rem !important; }
+
+  /* SHOPS CLOUD */
+  .shops-cloud {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: .75rem !important;
+  }
+  .shop-chip,
+  .shop-logo-card,
+  .shop-photo-card {
+    height: 90px !important;
+  }
+  .shop-logo-card img { max-height: 52px !important; }
+
+  /* MOSAIC */
+  .mosaic {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+  }
+  .mo, .mo.tall, .mo.wide {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    height: 44vw !important;
+  }
+
+  /* VENDOR */
+  .vendor-perks { grid-template-columns: 1fr !important; gap: 1rem !important; }
+  .perk-card { padding: 1.6rem 1.2rem !important; }
+  .price-chip { font-size: .8rem !important; padding: .6rem 1.2rem !important; text-align: center !important; }
+  .vendor-inner > div[style*="display:flex"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .vendor-inner .btn { width: 100% !important; justify-content: center !important; }
+
+  /* PAGE HERO */
+  .page-hero-simple {
+    padding: calc(60px + 2rem) 1.4rem 2rem !important;
+  }
+  .page-hero-simple .u-h2 { font-size: clamp(1.8rem, 6vw, 2.8rem) !important; }
+
+  /* MAP */
+  #market-map { height: 320px !important; border-radius: 16px !important; }
+
+  /* CONTACT PAGE */
+  .section > .section-inner > div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* NEWSLETTER SECTION */
+  .nl-section { padding: 3.5rem 1.4rem !important; }
+  .nl-form { max-width: 100% !important; flex-direction: column !important; border-radius: var(--radius) !important; overflow: hidden !important; }
+  .nl-input { border-radius: var(--radius) var(--radius) 0 0 !important; padding: 1rem 1.2rem !important; }
+  .nl-btn { border-radius: 0 0 var(--radius) var(--radius) !important; padding: 1rem !important; }
+
+  /* FOOTER */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.4rem !important;
+    padding: 3rem 1.4rem 2.4rem !important;
+  }
+  .footer-nl {
+    padding: 2rem 1.4rem !important;
+    flex-direction: column !important;
+    gap: 1.4rem !important;
+    align-items: flex-start !important;
+  }
+  .footer-nl-form { width: 100% !important; flex: none !important; flex-direction: column !important; border-radius: var(--radius) !important; }
+  .footer-nl-form input { border-radius: var(--radius) var(--radius) 0 0 !important; }
+  .footer-nl-form button { border-radius: 0 0 var(--radius) var(--radius) !important; padding: .85rem !important; }
+  .footer-bottom {
+    padding: 1.2rem 1.4rem !important;
+    flex-direction: column !important;
+    gap: .4rem !important;
+    text-align: center !important;
+  }
+  .footer-logo { height: 40px !important; }
+  .footer-script { font-size: 1.3rem !important; }
+  .f-social { margin-top: 1rem !important; }
+}
+
+/* ── SMALL PHONES ── */
+@media (max-width: 480px) {
+  .u-h1 { font-size: 2rem !important; }
+  .hero-right { height: 64vw !important; }
+  .cats-grid { grid-template-columns: 1fr !important; }
+  .gallery-strip { grid-template-columns: 1fr !important; }
+  .gp { height: 60vw !important; }
+  .shops-cloud { grid-template-columns: repeat(2, 1fr) !important; }
+  .hero-proof { flex-wrap: wrap !important; gap: 1.2rem !important; }
+}
