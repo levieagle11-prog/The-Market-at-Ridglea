@@ -722,3 +722,14 @@ footer {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
+
+/* ════════════════════════════════════════
+   MOSAIC FIX — clean 2-row, no gaps
+════════════════════════════════════════ */
+.mosaic {
+  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-rows: 440px 340px !important;
+}
+.mo.tall  { grid-row: span 2; grid-column: span 1; }
+.mo.wide  { grid-column: span 2; }
+.mo       { height: auto !important; }
